@@ -1,7 +1,9 @@
-phx
+Phx
 ===
 
-My first PHP framework
+A Micro PHP Framework For Beginners
+
+http://localhost/phx/default/hello
 
 设计原则
 - 约定优于配置原则
