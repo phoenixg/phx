@@ -97,8 +97,8 @@ set_error_handler(function ($errorNo, $errMsg, $errFilePath, $errLine){
  * SET DEFAULT EXCEPTION HANDLER
  *---------------------------------------------------------------
  * 
- * For handling exceptions that are not caught by try...catch...
- * For instance, you could setup an exception_handler that logs all of the exceptions to file
+ * 专门用于处理不能被 try...catch... 捕捉到的异常，比如，设置一个 exception_handler 把异常信息记录进log文件
+ * try...catch... 里抛出的异常不会通过该函数处理，而是通过下面的自定义handler设置的
  * 使用 throw new Exception('异常信息') 手动触发该异常处理
  */
 set_exception_handler(function ($e) {
