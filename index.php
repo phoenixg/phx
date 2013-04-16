@@ -71,6 +71,7 @@ unset($config_files);
  * INITIALIZE CONFIG CLASS
  *---------------------------------------------------------------
  * Retrieve config item via: $CFG::get('application.aaa.ddd.eee');
+ * 使用了单例模式
  */
 $CFG = new Phx\Config($config);
 unset($config);
