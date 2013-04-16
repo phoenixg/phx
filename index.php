@@ -74,7 +74,7 @@ unset($config_files);
  * 使用了单例模式
  * 一旦实例化了配置类，我们就能做很多事了
  */
-$CFG = new Phx\Config($config);
+$CFG = Config::getInstance($config);
 unset($config);
 
 /*
