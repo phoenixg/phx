@@ -8,6 +8,7 @@ Phx - A Micro assembled  RESTful PHP Framework For Beginners with one day learni
 ## TODO
 
 - 参考 CI 的优秀点：<http://codeigniter.org.cn/forums/thread-14343-1-1.html>
+- 下一步是要 Kint::enabled(false); 添加进dBug，做访问统一
 
 设计原则
 
