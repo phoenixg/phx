@@ -4,6 +4,16 @@
  *
  * @author   PHOENIX <gopher.huang@gmail.com>
  * @link    https://github.com/phoenixg/phx
+ *
+ * ///,                //// /
+ *  \    /,            /    >.
+ *    \    /,      _/    /.
+ *      \_    /_/      /.     It's more like an eagle than phoenix, if you can find a better ascii picture,
+ *        \__/_      <      just  make a pull request
+ *        /<<<  \_\_
+ *      /,)^>>_._  \
+ *      (/      \\  /\\\
+ *                // ````
  */
 
 /*
@@ -77,12 +87,16 @@ unset($config_files);
 $CFG = Config::getInstance($config);
 unset($config);
 
+
+
 /*
  *---------------------------------------------------------------
  * SET DEFAULT TIMEZONE
  *---------------------------------------------------------------
  */
 date_default_timezone_set($CFG::get('application.timezone'));
+
+
 
 
 /*
@@ -213,9 +227,10 @@ $frontController->route();
 require './core/debugger/kint/Kint.class.php';
 //Kint::enabled(false);
 
-Kint::dump( 1 );
+Kint::dump( $CFG );
 d( 2 );
-
+d(date_default_timezone_get());
+die;
 
 
 /*

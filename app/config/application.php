@@ -1,6 +1,7 @@
 <?php
 
 return array(
+    // 基本信息，放在一级下
     'hostname'            => 'localhost',
     'base_url'            => '/phx/',
     'timezone'            => 'Asia/Shanghai',
@@ -11,7 +12,7 @@ return array(
 
 
 
-    
+
 
     'key'                  => '123456abcdefg',
     'debug_soft'           => 'firephp', //or dbug
