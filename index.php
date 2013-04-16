@@ -36,7 +36,6 @@ define('PATH_CORE_DEBUG',   PATH_BASE . 'core' .       DS . 'debugger' .      DS
 
 // 定义文件的路径
 define('EXT',             '.php');
-define('FILE_LOG', PATH_LOGS . 'mylog.log');
 define('FILE_BASE',       PATH_BASE . 'index' .   EXT);
 
 // 定义跨平台的行尾结束符
@@ -147,6 +146,8 @@ set_error_handler(function ($errorNo, $errMsg, $errFilePath, $errLine){
     error_log($logInfo, 3, FILE_LOG_ERRORS);
 });
 
+echo $a['a'];
+die;
 /*
  *---------------------------------------------------------------
  * SET DEFAULT EXCEPTION HANDLER

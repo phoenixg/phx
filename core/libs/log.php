@@ -5,8 +5,8 @@
  *
  * usage: Log::info('test'), Log::warn('test'), Log::error('test')
  */
-class Log {  
-    private function __construct() {} 
+class Log {
+    private function __construct() {}
 
     // write a log
     protected static function write($type, $message)
@@ -14,6 +14,7 @@ class Log {
         $message = static::format($type, $message);
         //echo $message;
 
+        // 这里应该注入路径，解耦
         $logFile = PATH_LOGS . 'runtime_' . date('Ymd') . '.log';
         file_put_contents($logFile, $message, LOCK_EX | FILE_APPEND);
     }
@@ -23,7 +24,7 @@ class Log {
     {
         return '['.date('Y-m-d H:i:s').'] '.strtoupper($type)." - {$message}".PHP_EOL;
     }
-    
+
     // handle non-existed static method
     public static function __callStatic($method, $parameters)
     {
