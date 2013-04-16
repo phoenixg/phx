@@ -232,6 +232,23 @@ function __autoload($classname)
     }
 }
 
+// 在这里重写自动加载，如何把各文件夹下的都加载进来，包括类库文件，还是不用包括？
+// new Default_Controller();
+spl_autoload_register(function ($classname){
+    $filename = PATH_APP_C.strtolower($classname).EXT;
+    if(is_file($filename)){
+        include $filename;
+        echo 'go';
+    }
+});
+
+
+
+
+
+
+
+
 /*
  *---------------------------------------------------------------
  * ROUTE URI TO CONTROLLER/METHOD
@@ -258,5 +275,5 @@ require './core/debugger/kint/Kint.class.php';
 //new dBug(get_defined_vars());
 
 $constants = get_defined_constants(true);
-new dBug($constants['user']);
+//new dBug($constants['user']);
 
