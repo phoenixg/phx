@@ -548,4 +548,21 @@ SCRIPTS;
 	}
 
 }
+
+if ( !function_exists( 'd' ) ) {
+	function d()
+	{
+		$args = func_get_args();
+		new dBug($args);
+	}
+}
+
+if ( !function_exists( 'dd' ) ) {
+	function dd()
+	{
+		$args = func_get_args();
+		new dBug($args);
+		die;
+	}
+}
 ?>

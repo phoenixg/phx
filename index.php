@@ -35,6 +35,8 @@ define('PATH_CORE',         PATH_BASE . 'core' .       DS);
 define('PATH_CORE_LIBS',    PATH_BASE . 'core' .       DS . 'libs' .             DS);
 define('PATH_CORE_HELPERS', PATH_BASE . 'core' .       DS . 'helpers' .    DS);
 define('PATH_CORE_DEBUG',   PATH_BASE . 'core' .       DS . 'debugger' .      DS);
+define('PATH_CORE_COMMONS', PATH_BASE . 'core' .       DS . 'commons' .      DS);
+
 
 // 定义文件的路径
 define('EXT',       '.php');
@@ -46,10 +48,30 @@ define('EOL', PHP_EOL);
 
 /*
  *---------------------------------------------------------------
- * INCLUDE COMMON FUNCTIONS
+ * INCLUDE COMMON FUNCTIONS AND LET'S DO SOME SAFETY JOBS FIRST
  *---------------------------------------------------------------
  */
-//require 'commons.php';
+require PATH_CORE_COMMONS . 'commons.php';
+
+// turn off register_globals
+unregister_GLOBALS();
+
+// turn off magic quotes
+if (get_magic_quotes_gpc()) {
+    function stripslashes_deep($value)
+    {
+        $value = is_array($value) ?
+                    array_map('stripslashes_deep', $value) :
+                    stripslashes($value);
+
+        return $value;
+    }
+
+    $_POST    = array_map('stripslashes_deep', $_POST);
+    $_GET     = array_map('stripslashes_deep', $_GET);
+    $_COOKIE  = array_map('stripslashes_deep', $_COOKIE);
+    $_REQUEST = array_map('stripslashes_deep', $_REQUEST);
+}
 
 /*
  *---------------------------------------------------------------
@@ -111,31 +133,20 @@ if ($CFG::get('application.error_reporting') === true) {
 
 /*
  *---------------------------------------------------------------
- * SET DEBUG HANDLER
+ * SET DEBUGGER
  *---------------------------------------------------------------
  */
-// 这里要用一个通用的东西，比如工厂类?
 if ($CFG::get('application.debug') === true) {
-    
-    switch ( $CFG::get('application.debug_tool') ) {
-         case 'dbug':
-             require PATH_CORE_DEBUG . 'dBug' . DS .'dBug' . EXT;
-             break;
-         case 'kint':
-             require PATH_CORE_DEBUG . 'kint' . DS .'Kint.class' . EXT;
-             break;
-         default:
-             break;
-    }
-    
-    if ( !function_exists( 'd' ) ) {
-        function d()
-        {
-            if ( !Kint::enabled() ) return null;
-
-            $args = func_get_args();
-            return call_user_func_array( array( 'Kint', 'dump' ), $args );
-        }
+    $debug_tool = & $CFG::get('application.debug_tool');
+    switch ($debug_tool) {
+        case 'dbug':
+            require PATH_CORE_DEBUG . 'dBug' . DS .'dBug' . EXT;
+            break;
+        case 'kint':
+            require PATH_CORE_DEBUG . 'kint' . DS .'Kint.class' . EXT;
+            break;
+        default:
+            break;
     }
 }
 

@@ -532,7 +532,7 @@ class Kint
 	}
 }
 
-/*
+
 if ( !function_exists( 'd' ) ) {
 	//Alias of Kint::dump()
 	function d()
@@ -554,7 +554,6 @@ if ( !function_exists( 'dd' ) ) {
 		die;
 	}
 }
-*/
 
 if ( !function_exists( 's' ) ) {
 
