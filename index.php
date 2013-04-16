@@ -35,8 +35,9 @@ define('PATH_CORE_HELPERS', PATH_BASE . 'core' .       DS . 'helpers' .    DS);
 define('PATH_CORE_DEBUG',   PATH_BASE . 'core' .       DS . 'debugger' .      DS);
 
 // 定义文件的路径
-define('EXT',             '.php');
-define('FILE_BASE',       PATH_BASE . 'index' .   EXT);
+define('EXT',       '.php');
+define('FILE_BASE', PATH_BASE . 'index' .   EXT);
+define('FILE_LOG',  PATH_LOGS .   date('Y-m-d') . '.log');
 
 // 定义跨平台的行尾结束符
 define('EOL', PHP_EOL);
@@ -143,25 +144,23 @@ if ($CFG::get('application.debug') === true) {
 set_error_handler(function ($errorNo, $errMsg, $errFilePath, $errLine){
     $logInfo = '['.date('Y-m-d H:i:s').'] Error: '.$errMsg.', on line: '.$errLine.', in file: '.$errFilePath.EOL;
     echo $logInfo;
-    error_log($logInfo, 3, FILE_LOG_ERRORS);
+    error_log($logInfo, 3, FILE_LOG);
 });
 
-echo $a['a'];
-die;
 /*
  *---------------------------------------------------------------
  * SET DEFAULT EXCEPTION HANDLER
  *---------------------------------------------------------------
  *
- * 专门用于处理不能被 try...catch... 捕捉到的异常，比如，设置一个 exception_handler 把异常信息记录进log文件
- * try...catch... 里抛出的异常不会通过该函数处理，而是通过下面的自定义handler设置的
- * 使用 throw new Exception('异常信息') 手动触发该异常处理
+ * 设置一个异常处理器把异常写进log里
+ * 专门用于处理 try...catch... 之外的异常
+ * 使用 throw new Exception('异常信息') 手动触发
  */
 set_exception_handler(function ($e) {
     $logInfo = '['.date("Y-m-d H:i:s").'] Exception on line: '.$e->getLine().', in file: '.$e->getFile()
                .', with message: '.$e->getMessage().EOL;
     echo $logInfo;
-    error_log($logInfo, 3, FILE_LOG_ERRORS);
+    error_log($logInfo, 3, FILE_LOG);
 });
 
 /*
@@ -185,7 +184,7 @@ class Phxexception extends Exception
     {
         $logInfo = '['.date("Y-m-d H:i:s").'] Custom Exception on line: '.$this->getLine().', in file: '.$this->getFile()
                    .', with message: '.$this->getMessage().EOL;
-        error_log($logInfo, 3, FILE_LOG_ERRORS);
+        error_log($logInfo, 3, FILE_LOG);
         return $logInfo;
     }
 }
