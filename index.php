@@ -1,9 +1,9 @@
 <?php
 /**
- * Phx - A Micro PHP Framework For Beginners
+ * Phx - A Micro RESTful PHP Framework For Beginners with one day learning curve
  *
  * @author   PHOENIX <gopher.huang@gmail.com>
- * @link     https://github.com/phoenixg/phpframework
+ * @link    https://github.com/phoenixg/phx
  */
 
 /*
@@ -82,11 +82,11 @@ if ($CFG::get('application.mode_debug')) {
  *---------------------------------------------------------------
  * SET ERROR HANDLER
  *---------------------------------------------------------------
- * 
+ *
  * 全部预定义的Error常量对应的数值（即$errorNo）见：http://php.net/manual/en/errorfunc.constants.php
  * error发生时自动触发，或手动触发：trigger_error("发生了一个错误")
  */
-set_error_handler(function ($errorNo, $errMsg, $errFilePath, $errLine){ 
+set_error_handler(function ($errorNo, $errMsg, $errFilePath, $errLine){
     $logInfo = '['.date('Y-m-d H:i:s').'] Error: '.$errMsg.', on line: '.$errLine.', in file: '.$errFilePath.EOL;
     echo $logInfo;
     error_log($logInfo, 3, FILE_LOG_ERRORS);
@@ -96,7 +96,7 @@ set_error_handler(function ($errorNo, $errMsg, $errFilePath, $errLine){
  *---------------------------------------------------------------
  * SET DEFAULT EXCEPTION HANDLER
  *---------------------------------------------------------------
- * 
+ *
  * 专门用于处理不能被 try...catch... 捕捉到的异常，比如，设置一个 exception_handler 把异常信息记录进log文件
  * try...catch... 里抛出的异常不会通过该函数处理，而是通过下面的自定义handler设置的
  * 使用 throw new Exception('异常信息') 手动触发该异常处理
@@ -112,7 +112,7 @@ set_exception_handler(function ($e) {
  *---------------------------------------------------------------
  * SET CUSTOM EXCEPTION HANDLER FOR TRY...CATCH...
  *---------------------------------------------------------------
- * 
+ *
  *  try {
  *      throw new Phxexception("异常信息");
  *  } catch(Phxexception $e) {
@@ -157,22 +157,22 @@ require 'ioc'.EXT;
  * SET CONTROLLER AND MODEL CLASSES TO BE AUTOLOAD
  *---------------------------------------------------------------
  */
-function __autoload($classname) 
+function __autoload($classname)
 {
     //var_dump($classname);  eg. Default_Controller
     $fileController = PATH_APP_C . strtolower($classname) . EXT;
-        
+
     if (is_file($fileController)) {
         include $fileController;
     } else {
         $fileModel = PATH_APP_M . strtolower($classname) . EXT;
-        
+
         if (is_file($fileModel)) {
             include $fileModel;
         } else {
             throw new Exception('无法自动加载该类：'.$classname);
         }
-    }  
+    }
 }
 
 /*

@@ -1,9 +1,12 @@
 Phx
 ===
 
-A Micro PHP Framework For Beginners
+Phx - A Micro assembled  RESTful PHP Framework For Beginners with one day learning curve
 
 http://localhost/phx/default/hello
+
+## TODO
+- 参考CI的优秀点：http://codeigniter.org.cn/forums/thread-14343-1-1.html
 
 设计原则
 - 约定优于配置原则
@@ -66,7 +69,7 @@ auth
 config
 string
 file
-markdown 
+markdown
 route
 
 
