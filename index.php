@@ -22,7 +22,7 @@ define('PATH_LOGS',         PATH_APP . 'logs' .       DS);
 define('PATH_CORE',         PATH_BASE . 'core' .       DS);
 define('PATH_CORE_LIBS',    PATH_BASE . 'core' .       DS . 'libs' .             DS);
 define('PATH_CORE_HELPERS', PATH_BASE . 'core' .       DS . 'helpers' .    DS);
-define('PATH_CORE_DEBUG',   PATH_BASE . 'core' .       DS . 'debug' .      DS);
+define('PATH_CORE_DEBUG',   PATH_BASE . 'core' .       DS . 'debugger' .      DS);
 
 // 定义文件的路径
 define('EXT',             '.php');
@@ -72,6 +72,7 @@ unset($config_files);
  *---------------------------------------------------------------
  * Retrieve config item via: $CFG::get('application.aaa.ddd.eee');
  * 使用了单例模式
+ * 一旦实例化了配置类，我们就能做很多事了
  */
 $CFG = new Phx\Config($config);
 unset($config);
@@ -92,7 +93,7 @@ date_default_timezone_set($CFG::get('application.timezone'));
 if ($CFG::get('application.mode_debug')) {
     ini_set('display_errors','On');
     error_reporting(E_ALL);
-    include PATH_CORE_DEBUG . 'dBug.php';
+    include PATH_CORE_DEBUG . 'dBug/dBug.php';
 } else {
     ini_set('display_errors','Off');
     error_reporting(0);
@@ -209,11 +210,11 @@ $frontController->route();
 
 
 
+require './core/debugger/kint/Kint.class.php';
+//Kint::enabled(false);
 
-
-
-
-
+Kint::dump( 1 );
+d( 2 );
 
 
 
