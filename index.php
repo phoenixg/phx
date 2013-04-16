@@ -118,17 +118,14 @@ if ($CFG::get('application.error_reporting') === true) {
 if ($CFG::get('application.debug') === true) {
     switch ( $CFG::get('application.debug_tool') ) {
          case 'dbug':
-             //include PATH_CORE_DEBUG . 'dBug/dBug.php';
+             require PATH_CORE_DEBUG . 'dBug' . DS .'dBug' . EXT;
              break;
          case 'kint':
-             echo 'cat';
+             require PATH_CORE_DEBUG . 'kint' . DS .'Kint.class' . EXT;
              break;
          default:
-             echo 'whatever';
              break;
      }
-
-
 }
 
 
@@ -208,7 +205,7 @@ require 'ioc'.EXT;
  */
 //$test = IoC::resolve('classname');
 
-// TODO here
+
 /*
  *---------------------------------------------------------------
  * SET CONTROLLER AND MODEL CLASSES TO BE AUTOLOAD
@@ -238,7 +235,7 @@ spl_autoload_register(function ($classname){
     $filename = PATH_APP_C.strtolower($classname).EXT;
     if(is_file($filename)){
         include $filename;
-        echo 'go';
+        echo 'aaa';
     }
 });
 
@@ -260,20 +257,4 @@ require 'frontcontroller.php';
 $frontController = FrontController::getInstance();
 $frontController->route();
 
-
-
-
-require './core/debugger/kint/Kint.class.php';
-
-
-
-/*
- *---------------------------------------------------------------
- * SHOW DEBUG INFORMATION
- *---------------------------------------------------------------
- */
-//new dBug(get_defined_vars());
-
-$constants = get_defined_constants(true);
-//new dBug($constants['user']);
 

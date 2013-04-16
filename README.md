@@ -85,24 +85,23 @@ JS:
 
 ## 文档
 
-### Kint （需开启 mb_string）
+#### Kint （需开启 mb_string）
 http://raveren.github.io/kint
+    
+    d( $var );
 
-require '/kint/Kint.class.php';
+    // 同 d( $var ); die;
+    dd( $var );
 
-d( $var );
+    d( $var1, $var2 );
 
-// 同 d( $var ); die;
-dd( $var );
+    // 禁用输出
+    Kint::enabled(false);
 
-d( $var1, $var2 );
-
-Kint::enabled(false);
-
-### dBug
+#### dBug
 http://dbug.ospinto.com/
 
-new dBug(get_defined_vars());
-
-$constants = get_defined_constants(true);
-new dBug($constants['user']);
+    new dBug(get_defined_vars());
+    
+    $constants = get_defined_constants(true);
+    new dBug($constants['user']);
