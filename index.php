@@ -20,6 +20,8 @@
  *---------------------------------------------------------------
  * DEFINE ALL CONSTANTS WE NEED
  *---------------------------------------------------------------
+ * 常量定义的命名约定：
+ * 文件夹以PATH_* 开头，文件以FILE_* 开头，依此类推
  */
 // 定义文件夹的路径
 define('DS',                DIRECTORY_SEPARATOR);
@@ -149,12 +151,12 @@ set_error_handler(function ($errorNo, $errMsg, $errFilePath, $errLine){
 
 /*
  *---------------------------------------------------------------
- * SET DEFAULT EXCEPTION HANDLER
+ * SET EXCEPTION HANDLER FOR EXCEPTION WITHOUT TRY...CATCH...
  *---------------------------------------------------------------
  *
  * 设置一个异常处理器把异常写进log里
  * 专门用于处理 try...catch... 之外的异常
- * 使用 throw new Exception('异常信息') 手动触发
+ * 可使用 throw new Exception('异常信息') 手动触发
  */
 set_exception_handler(function ($e) {
     $logInfo = '['.date("Y-m-d H:i:s").'] Exception on line: '.$e->getLine().', in file: '.$e->getFile()
@@ -165,7 +167,7 @@ set_exception_handler(function ($e) {
 
 /*
  *---------------------------------------------------------------
- * SET CUSTOM EXCEPTION HANDLER FOR TRY...CATCH...
+ * SET EXCEPTION HANDLER FOR EXCEPTION WITHIN TRY...CATCH...
  *---------------------------------------------------------------
  *
  * 设置一个用于标识的异常处理器：Phxexception
@@ -180,7 +182,7 @@ class Phxexception extends Exception
     public function __construct($message) {
         parent::__construct($message);
     }
-
+    // 这里不打印，是因为会在catch里进行打印
     public function getMsg()
     {
         $logInfo = '['.date("Y-m-d H:i:s").'] Phxexception on line: '.$this->getLine().', in file: '.$this->getFile()
@@ -189,10 +191,6 @@ class Phxexception extends Exception
         return $logInfo;
     }
 }
-
-
-
-die;
 
 /*
  *---------------------------------------------------------------
@@ -210,7 +208,7 @@ require 'ioc'.EXT;
  */
 //$test = IoC::resolve('classname');
 
-
+// TODO here
 /*
  *---------------------------------------------------------------
  * SET CONTROLLER AND MODEL CLASSES TO BE AUTOLOAD
