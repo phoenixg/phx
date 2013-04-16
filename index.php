@@ -130,8 +130,8 @@ if ($CFG::get('application.debug') === true) {
 }
 
 
-
-
+// 异常和错误都使用了 error_log() 来写错误
+// 只有用户自己的log才使用日志类来写
 
 /*
  *---------------------------------------------------------------
@@ -168,6 +168,7 @@ set_exception_handler(function ($e) {
  * SET CUSTOM EXCEPTION HANDLER FOR TRY...CATCH...
  *---------------------------------------------------------------
  *
+ * 设置一个用于标识的异常处理器：Phxexception
  *  try {
  *      throw new Phxexception("异常信息");
  *  } catch(Phxexception $e) {
@@ -182,13 +183,16 @@ class Phxexception extends Exception
 
     public function getMsg()
     {
-        $logInfo = '['.date("Y-m-d H:i:s").'] Custom Exception on line: '.$this->getLine().', in file: '.$this->getFile()
+        $logInfo = '['.date("Y-m-d H:i:s").'] Phxexception on line: '.$this->getLine().', in file: '.$this->getFile()
                    .', with message: '.$this->getMessage().EOL;
         error_log($logInfo, 3, FILE_LOG);
         return $logInfo;
     }
 }
 
+
+
+die;
 
 /*
  *---------------------------------------------------------------
