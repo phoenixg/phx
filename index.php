@@ -8,12 +8,12 @@
  * ///,                //// /
  *  \    /,            /    >.
  *    \    /,      _/    /.
- *      \_    /_/      /.     It's more like an eagle than phoenix, if you can find a better ascii picture,
- *        \__/_      <      just  make a pull request
- *        /<<<  \_\_
+ *      \_    /_/      /.     It's more like an eagle than phoenix,
+ *        \__/_      <      if you find a better ascii picture,
+ *        /<<<  \_\_      it's welcome to  make a pull request
  *      /,)^>>_._  \
  *      (/      \\  /\\\
- *                // ````
+ *                // ````       now let's fly!
  */
 
 /*
