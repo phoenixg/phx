@@ -101,14 +101,24 @@ date_default_timezone_set($CFG::get('application.timezone'));
  * SET ERROR REPORTING LEVEL
  *---------------------------------------------------------------
  */
-if ($CFG::get('application.mode_debug')) {
+if ($CFG::get('application.error_reporting') === true) {
     ini_set('display_errors','On');
     error_reporting(E_ALL);
-    include PATH_CORE_DEBUG . 'dBug/dBug.php';
 } else {
     ini_set('display_errors','Off');
     error_reporting(0);
 }
+
+/*
+ *---------------------------------------------------------------
+ * SET DEBUG HANDLER
+ *---------------------------------------------------------------
+ */
+
+
+
+
+    include PATH_CORE_DEBUG . 'dBug/dBug.php';
 
 /*
  *---------------------------------------------------------------

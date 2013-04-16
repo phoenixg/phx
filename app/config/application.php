@@ -15,6 +15,9 @@ return array(
     // 默认控制器方法名称
     'default_action'     => 'index',
 
+    // 是否开启错误报告，生产环境中请设置为false
+    'error_reporting' => true,
+
     // 是否开启调试
     'mode_debug'         => true,
 
