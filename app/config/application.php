@@ -18,20 +18,14 @@ return array(
     // 是否开启错误报告，生产环境中请设置为false
     'error_reporting' => true,
 
-    // 是否开启调试
-    'mode_debug'         => true,
+    // 是否加载调试工具
+    'debug'         => true,
 
-    // 调试的方案
-    'debug_soft'           => 'firephp', //or dbug
-
-
-
-
+    // 调试工具（dbug 或 kint ）， 是否再包括firephp
+    'debug_tool'           => 'kint',
 
     // 加密盐
     'key'                  => '123456abcdefg',
-
-
 
     // 这是用来测试的
     'aaa'                  => array( 'bbb' => '111',

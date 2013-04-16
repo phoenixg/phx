@@ -87,8 +87,6 @@ unset($config_files);
 $CFG = Config::getInstance($config);
 unset($config);
 
-
-
 /*
  *---------------------------------------------------------------
  * SET DEFAULT TIMEZONE
@@ -114,11 +112,26 @@ if ($CFG::get('application.error_reporting') === true) {
  * SET DEBUG HANDLER
  *---------------------------------------------------------------
  */
+// 这里要用一个通用的东西，比如工厂类?
+if ($CFG::get('application.debug') === true) {
+    switch ( $CFG::get('application.debug_tool') ) {
+         case 'dbug':
+             //include PATH_CORE_DEBUG . 'dBug/dBug.php';
+             break;
+         case 'kint':
+             echo 'cat';
+             break;
+         default:
+             echo 'whatever';
+             break;
+     }
+
+
+}
 
 
 
 
-    include PATH_CORE_DEBUG . 'dBug/dBug.php';
 
 /*
  *---------------------------------------------------------------
