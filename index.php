@@ -104,7 +104,7 @@ date_default_timezone_set($CFG::get('application.timezone'));
 if ($CFG::get('application.mode_debug')) {
     ini_set('display_errors','On');
     error_reporting(E_ALL);
-    //include PATH_CORE_DEBUG . 'dBug/dBug.php';
+    include PATH_CORE_DEBUG . 'dBug/dBug.php';
 } else {
     ini_set('display_errors','Off');
     error_reporting(0);
@@ -222,12 +222,7 @@ $frontController->route();
 
 
 require './core/debugger/kint/Kint.class.php';
-//Kint::enabled(false);
 
-Kint::dump( $CFG );
-d( 2 );
-d(date_default_timezone_get());
-die;
 
 
 /*
@@ -235,10 +230,8 @@ die;
  * SHOW DEBUG INFORMATION
  *---------------------------------------------------------------
  */
-//new dBug($GLOBALS);
-
 //new dBug(get_defined_vars());
 
-//$constants = get_defined_constants(true);
-//new dBug($constants['user']);
+$constants = get_defined_constants(true);
+new dBug($constants['user']);
 

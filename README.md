@@ -54,14 +54,14 @@ PHP:
         function last() // 处理 article/tab/last
         function hot()  // 处理 article/tab/hot
     }
-  
+
 JS:
 
     var Tab = {
         "last": function() // 处理 article/tab#last
         "hot": function()  // 处理 article/tab#hot
     }
-  
+
 **框架的作用是 DRY**
 
     assets
@@ -83,5 +83,26 @@ JS:
     markdown
     route
 
+## 文档
 
+### Kint （需开启 mb_string）
+http://raveren.github.io/kint
 
+require '/kint/Kint.class.php';
+
+d( $var );
+
+// 同 d( $var ); die;
+dd( $var );
+
+d( $var1, $var2 );
+
+Kint::enabled(false);
+
+### dBug
+http://dbug.ospinto.com/
+
+new dBug(get_defined_vars());
+
+$constants = get_defined_constants(true);
+new dBug($constants['user']);
