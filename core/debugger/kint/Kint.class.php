@@ -532,13 +532,9 @@ class Kint
 	}
 }
 
-
+/*
 if ( !function_exists( 'd' ) ) {
-	/**
-	 * Alias of Kint::dump()
-	 *
-	 * @return string
-	 */
+	//Alias of Kint::dump()
 	function d()
 	{
 		if ( !Kint::enabled() ) return null;
@@ -549,12 +545,6 @@ if ( !function_exists( 'd' ) ) {
 }
 
 if ( !function_exists( 'dd' ) ) {
-	/**
-	 * Alias of Kint::dump()
-	 * [!!!] IMPORTANT: execution will halt after call to this function
-	 *
-	 * @return string
-	 */
 	function dd()
 	{
 		if ( !Kint::enabled() ) return;
@@ -564,6 +554,7 @@ if ( !function_exists( 'dd' ) ) {
 		die;
 	}
 }
+*/
 
 if ( !function_exists( 's' ) ) {
 

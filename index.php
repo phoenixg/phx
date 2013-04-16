@@ -116,6 +116,7 @@ if ($CFG::get('application.error_reporting') === true) {
  */
 // 这里要用一个通用的东西，比如工厂类?
 if ($CFG::get('application.debug') === true) {
+    
     switch ( $CFG::get('application.debug_tool') ) {
          case 'dbug':
              require PATH_CORE_DEBUG . 'dBug' . DS .'dBug' . EXT;
@@ -125,7 +126,17 @@ if ($CFG::get('application.debug') === true) {
              break;
          default:
              break;
-     }
+    }
+    
+    if ( !function_exists( 'd' ) ) {
+        function d()
+        {
+            if ( !Kint::enabled() ) return null;
+
+            $args = func_get_args();
+            return call_user_func_array( array( 'Kint', 'dump' ), $args );
+        }
+    }
 }
 
 
