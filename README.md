@@ -19,6 +19,7 @@ Phx - A Micro assembled  RESTful PHP Framework For Beginners with one day learni
 - 代码易读性
 - 表达性：借鉴 laravel，方法的操纵和参数让人直接明白它要做的意思
 - 集成jquery等
+- 安装成功的首页显示凤凰的字符图，它说"成功安装了，删掉我，开始写代码"之类的话
 
 借用其他框架中收集的优秀函数
 
@@ -77,6 +78,18 @@ PHP:
     route
 
 ## 文档
+
+#### 安装
+环境要求：需要 PHP 5.3 及以上版本，确认开启了mb_string。
+
+<!--
+首先：
+
+    php composer.phar install
+-->
+
+
+
 
 #### 配置类
 要设置一个配置项目，只需修改`app/config`下的文件。你还可以参考现有的配置文件创建自己的配置文件。

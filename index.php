@@ -280,3 +280,6 @@ $frontController = FrontController::getInstance();
 $frontController->route();
 
 //d(array(1,2,3), array(4,5,6,array('a')));
+
+?>
+<?php namespace O; include "O.php";?>
