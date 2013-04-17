@@ -146,3 +146,17 @@ PHP:
     log('这是 `代码体`')
     log('这是 [c="color: red"]红色字[c]')
 
+#### 支持对象语法
+Phx框架装配了[php-o](https://github.com/jsebrech/php-o)，为PHP提供了对象语法操纵字符串等数据的能力，用法：
+
+##### s() 用于处理字符串
+    echo s("abc")->len();// 3
+    echo s("abc")->substr(2); // c
+    echo s("abcde")->pos("c"); // 2 ，ipos(), rpos() 和 ipos()同理
+    echo s("abcde")->explode("c"); // Array ( [0] => ab [1] => de ) ， trim(), ltrim(), rtrim(), pad(), len(), tolower(), toupper(), substr(), replace(), ireplace(), preg_match(), preg_match_all(), preg_replace(), in_array() 同理
+
+    $s = s("abc"); echo $s[2]; // c
+
+    echo s("abc")->toUpperCase(); // ABC ，charAt(), indexOf(), lastIndexOf(), match(), replace(), split(), substr(), substring(), toLowerCase(), toUpperCase(), trim(), trimLeft(), trimRight() 和 valueOf() 同理，这些是javascript形式的方法
+
+##### s() 用于处理数组

@@ -281,5 +281,5 @@ $frontController->route();
 
 
 include PATH_CORE_LIBS .'php-o' .DS.'O.php';
-echo s("abc")->len();
-echo s("abc")->substr(2);
+
+ echo s("abc")->toUpperCase();
