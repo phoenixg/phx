@@ -86,13 +86,14 @@ JS:
 ## 文档
 
 #### 配置类
-    # 获得一个配置项目的内容
-    Config::get('application');
-    Config::get('application.timezone');
+要设置一个配置项目，只需修改`app/config`下的文件。你还可以参考现有的配置文件创建自己的配置文件。
 
+    # 获得一个配置项目的内容，这里的`application`就是配置文件的文件名
+    Config::get('application');          // 数组形式返回`application`键下的所有项目
+    Config::get('application.timezone'); // 如果这不是数组，就返回项目的值
 
-
-
+    # 判断配置项目是否存在
+    Config::has('application.timezone'); // 返回布尔值 true / false
 
 #### debugger
 抛弃`var_dump()`吧！Phx框架集成了两种调试器，支持任何数据类型！
