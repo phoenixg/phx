@@ -153,12 +153,10 @@ Phx框架装配了[php-o](https://github.com/jsebrech/php-o)，为PHP提供了�
     echo s("abc")->len();// 3
     echo s("abc")->substr(2); // c
     echo s("abcde")->pos("c"); // 2
-    echo s("abcde")->explode("c"); // Array ( [0] => ab [1] => de ) ，, , , ,, , , ,  同理
+    echo s("abcde")->explode("c"); // Array ( [0] => ab [1] => de )
 
-| 支持的函数        |            |   | | | | | ||
-| ------------- |:-------------:| -----:| | | | | ||
-| ipos() | rpos() |  ipos() |  trim()| ltrim() | rtrim()| pad()|len() |in_array()|
-| tolower() | toupper() | substr() |replace() | ireplace() |preg_match() |preg_match_all() |preg_replace() ||
+其他支持的函数：`ipos()` , `rpos()` , ` ipos()` , ` trim()`, `ltrim()` , `rtrim()`, `pad()`, `len()`, `in_array()`,
+, `tolower()` , `toupper()` , `substr()`, `replace()` , `ireplace()`, `preg_match()`, `preg_match_all()`, `preg_replace()`
 
     $s = s("abc"); echo $s[2]; // c
 
