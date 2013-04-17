@@ -86,7 +86,9 @@ JS:
 ## 文档
 
 #### 配置类
-要使用配置类，只需
+    # 获得一个配置项目的内容
+    Config::get('application');
+    Config::get('application.timezone');
 
 
 

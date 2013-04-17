@@ -3,6 +3,7 @@ class Default_Controller extends Controller {
 
 	public function action_index()
 	{
+		d(Config::get('application'));
 		d(Config::get('application.timezone'));
 		echo 'you are in default controller and default method';
 	}
