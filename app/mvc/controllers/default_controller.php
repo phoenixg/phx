@@ -5,7 +5,7 @@ class Default_Controller extends Controller {
 	public function action_index()
 	{
 
-		echo s("abc")->len();// 3
+
 		echo 'you are in default controller and default method';
 	}
 
