@@ -36,6 +36,7 @@ define('PATH_CORE_LIBS',    PATH_BASE . 'core' .       DS . 'libs' .            
 define('PATH_CORE_HELPERS', PATH_BASE . 'core' .       DS . 'helpers' .    DS);
 define('PATH_CORE_DEBUG',   PATH_BASE . 'core' .       DS . 'debugger' .      DS);
 define('PATH_CORE_COMMONS', PATH_BASE . 'core' .       DS . 'commons' .      DS);
+define('PATH_CORE_PLUGINS', PATH_BASE . 'core' .       DS . 'plugins' .      DS);
 
 
 // 定义文件的路径
@@ -221,20 +222,13 @@ include 'ioc'.EXT;
 
 /*
  *---------------------------------------------------------------
- * INCLUDE php-o
- *---------------------------------------------------------------
- */
-if ($CFG::get('application.php-o') === true) {
-    include PATH_CORE_LIBS .'php-o' .DS.'O.php';
-}
-
-/*
- *---------------------------------------------------------------
  * RESOLVE ALL CLASSES
  *---------------------------------------------------------------
  * $test = IoC::resolve('classname');
+ * 附带一个simpleexcel做演示？
  */
 //$test = IoC::resolve('classname');
+
 
 
 /*
@@ -270,11 +264,14 @@ spl_autoload_register(function ($classname){
     }
 });
 
-
-
-
-
-
+/*
+ *---------------------------------------------------------------
+ * INCLUDE php-o
+ *---------------------------------------------------------------
+ */
+if ($CFG::get('application.php-o') === true) {
+    include PATH_CORE_PLUGINS . 'php-o' . DS . 'O.php';
+}
 
 
 /*
@@ -287,5 +284,6 @@ spl_autoload_register(function ($classname){
 require 'frontcontroller.php';
 $frontController = FrontController::getInstance();
 $frontController->route();
+
 
 
