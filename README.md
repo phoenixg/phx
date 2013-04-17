@@ -98,7 +98,7 @@ PHP:
     d( $var );
     d( $var1, $var2 );
 
-<del>
+<!--
 #### Kint （需开启 mb_string）
 http://raveren.github.io/kint
 
@@ -119,7 +119,7 @@ http://dbug.ospinto.com/
 
     $constants = get_defined_constants(true);
     new dBug($constants['user']);
-</del>
+-->
 
 #### 服务器端日志类
 日志文件都位于`app/logs`目录（请确保该目录可写），根据日期每天创建一个文件。如果你想在程序中创建一条日志记录，可以：
