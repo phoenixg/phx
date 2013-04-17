@@ -1,14 +1,9 @@
 <?php
 class Default_Controller extends Controller {
 
-	public function __construct(){
-		parent::__construct();
-		d($this->CFG);
-	}
-
 	public function action_index()
 	{
-		d($CFG::get('application.timezone'));
+		d(Config::get('application.timezone'));
 		echo 'you are in default controller and default method';
 	}
 

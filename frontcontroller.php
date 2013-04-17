@@ -9,14 +9,12 @@ class FrontController {
     protected $_action;
     protected $_params = array();
 
-
     // 防止直接new
     private function __construct() {
-        global $CFG;
 
         // parse uri into string
         $request_uri = $_SERVER['REQUEST_URI'];
-        $request_str = str_replace($CFG::get('application.base_url'), '', $request_uri);
+        $request_str = str_replace(Config::get('application.base_url'), '', $request_uri);
 
         while(substr($request_str, strlen($request_str)-1) == '/') {
             $request_str = substr($request_str, 0, -1);
@@ -28,8 +26,8 @@ class FrontController {
         unset($request_str);
 
         // first two segments is controller/action
-        $this->_controller = empty($request_str_arr['0']) ? $CFG::get('application.default_controller') : $request_str_arr['0'];
-        $this->_action = empty($request_str_arr['1']) ?  $CFG::get('application.default_action') : $request_str_arr['1'];
+        $this->_controller = empty($request_str_arr['0']) ? Config::get('application.default_controller') : $request_str_arr['0'];
+        $this->_action = empty($request_str_arr['1']) ?  Config::get('application.default_action') : $request_str_arr['1'];
 
         // uri parameters
         for($i = 2; $i < count($request_str_arr); $i++)

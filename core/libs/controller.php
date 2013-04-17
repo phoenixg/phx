@@ -2,13 +2,6 @@
 
 class Controller {
 
-    protected $CFG;
-
-    public function __construct(){
-        global $CFG;
-        $this->CFG = $CFG;
-    }
-
 
     //加载模型，返回模型对象实例
     public function loadModel($name)
