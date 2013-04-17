@@ -14,10 +14,11 @@ class Default_Controller extends Controller {
 		echo 'you are in hello';
 
 		$this->test();
-
+		/*
 		$model = new User_Model();
 		$myVar =  $model->query();
 		var_dump($myVar);
+		*/
 
 		$viewPath = dirname(__FILE__) . '/../views/default.php';
 		if(!file_exists($viewPath))

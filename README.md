@@ -128,3 +128,12 @@ http://dbug.ospinto.com/
     Log::warn('This is a warn message');
     Log::error('This is an error message');
 
+#### 浏览器日志类
+抛弃`console.log`吧！Phx框架集成了浏览器调试类（ http://adamschwartz.co/log/ ），用法：
+
+    log(123)
+    log('这是 *斜体字*')
+    log('这是 _加粗字_')
+    log('这是 `代码体`')
+    log('这是 [c="color: red"]红色字[c]')
+
