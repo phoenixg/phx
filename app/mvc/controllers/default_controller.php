@@ -1,9 +1,10 @@
 <?php
+
 class Default_Controller extends Controller {
 
 	public function action_index()
 	{
-		include PATH_CORE_LIBS .'php-o' .DS.'O.php';
+
 		echo s("abc")->len();// 3
 		echo 'you are in default controller and default method';
 	}

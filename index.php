@@ -217,7 +217,16 @@ class Phxexception extends Exception
  *---------------------------------------------------------------
  * Append your own IoC class in ioc.php file
  */
-require 'ioc'.EXT;
+include 'ioc'.EXT;
+
+/*
+ *---------------------------------------------------------------
+ * INCLUDE php-o
+ *---------------------------------------------------------------
+ */
+if ($CFG::get('application.php-o') === true) {
+    include PATH_CORE_LIBS .'php-o' .DS.'O.php';
+}
 
 /*
  *---------------------------------------------------------------
@@ -279,6 +288,4 @@ require 'frontcontroller.php';
 $frontController = FrontController::getInstance();
 $frontController->route();
 
-
-//include PATH_CORE_LIBS .'php-o' .DS.'O.php';
 

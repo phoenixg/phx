@@ -24,6 +24,9 @@ return array(
     // 调试工具（dbug 或 kint）， 是否再包括firephp
     'debug_tool'           => 'kint',
 
+    // 是否开启php-o对象操纵功能
+    'php-o'           => true,
+
     // 加密盐
     'key'                  => '123456abcdefg',
 
