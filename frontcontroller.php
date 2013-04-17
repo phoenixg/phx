@@ -8,7 +8,8 @@ class FrontController {
     protected $_controller;
     protected $_action;
     protected $_params = array();
-    
+
+
     // 防止直接new
     private function __construct() {
         global $CFG;
@@ -16,7 +17,7 @@ class FrontController {
         // parse uri into string
         $request_uri = $_SERVER['REQUEST_URI'];
         $request_str = str_replace($CFG::get('application.base_url'), '', $request_uri);
-        
+
         while(substr($request_str, strlen($request_str)-1) == '/') {
             $request_str = substr($request_str, 0, -1);
         }
@@ -39,7 +40,7 @@ class FrontController {
 
         Log::info('Initialized FC successfully');
     }
-    
+
     // 防止直接clone
     private function __clone() {}
 
@@ -49,16 +50,16 @@ class FrontController {
         }
         return self::$_instance;
     }
-    
+
     // 根据控制器和方法名称，执行控制器对应的方法
     public function route() {
         $controllerName = ucfirst($this->_controller) . '_Controller';
         $controllerHandler = new $controllerName();
 
-        $action = 'action_'.$this->_action; 
-        if(!method_exists($controllerHandler, $action)) 
+        $action = 'action_'.$this->_action;
+        if(!method_exists($controllerHandler, $action))
             throw new Exception('不存在方法：'.$action);
-            
+
         $controllerHandler->$action($this->_params);
     }
 }
