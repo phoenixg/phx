@@ -125,7 +125,7 @@ PHP:
     Log::error('This is an error message');
 
 #### 浏览器端日志类
-抛弃`console.log`吧！Phx框架集成了浏览器端日志/调试类（ http://adamschwartz.co/log/ ），用法：
+抛弃`console.log`吧！Phx框架集成了浏览器端日志/调试类（[Log](http://adamschwartz.co/log/ )），用法：
 
     log(123)
     log('这是 *斜体字*')
