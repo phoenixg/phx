@@ -147,7 +147,7 @@ PHP:
     log('这是 [c="color: red"]红色字[c]')
 
 #### 支持对象语法
-Phx框架装配了[php-o](https://github.com/jsebrech/php-o)，为PHP提供了对象语法操纵字符串等数据的能力，用法：
+Phx框架装配了[php-o](https://github.com/jsebrech/php-o)，默认在`application.php-o`配置项中启用，它为PHP提供了对象语法操纵字符串等数据的能力，用法：
 
 ##### s() 用于处理字符串
     echo s("abc")->len();// 3
