@@ -3,11 +3,21 @@ Phx
 
 Phx - A Micro assembled  RESTful PHP Framework For Beginners with one day learning curve
 
+灵感来源：[Toper](http://my.oschina.net/mingtingling/blog?catalog=263852), [laravel](http://laravel.com/),
+[CodeIgniter](http://ellislab.com/codeigniter)
+
+鸣谢 [justjavac](http://justjavac.com) 
+
 <http://localhost/phx/default/hello>
 
 ## TODO
 
 - 参考 CI 的优秀点：<http://codeigniter.org.cn/forums/thread-14343-1-1.html>
+- 参考博客里的优秀代码和知识点，用在框架上
+- 下一步要做的是实现rest，还是模板引擎？还是不要用模板引擎？
+- 下一步数据库层,orm和dao,ar的实现怎么做？ 装配？
+- 下一步先做什么？
+- 不提供前端框架？
 
 设计原则
 
@@ -20,62 +30,20 @@ Phx - A Micro assembled  RESTful PHP Framework For Beginners with one day learni
 - 表达性：借鉴 laravel，方法的操纵和参数让人直接明白它要做的意思
 - 集成jquery等
 - 安装成功的首页显示凤凰的字符图，它说"成功安装了，删掉我，开始写代码"之类的话
+- 框架的作用是 DRY
+- 借用其他框架中收集的优秀函数
+- 完全遵循 PSR-2 编码规范
+- 全英文文档的撰写
+- gitpage 等项目官方网站
+- 插件用注册器模式
 
-借用其他框架中收集的优秀函数
 
-完全遵循 PSR-2 编码规范
-
-全英文文档的撰写
-
-gitpage 等项目官方网站
-
-插件用注册器模式
-
-鸣谢 [justjavac](http://justjavac.com) 等
-
-## 渐进增强
-
-* 『最新文章』的url是 article/tab/last
-* 『热门文章』的url是 article/tab/hot
-
-这样，每次点击链接，页面都会刷新。即使不启用 js 页面也可以正常访问浏览。
-现在往里面加入 js 代码，【增强】它的用户体验。
-我还没有说完呢。问题是什么呢？
-不能 history，
-不能外部链接直接访问
-不过看看 twitter 或者 gmail 就知道怎么解决了。
-就是用js修改 segment 也就是
-
-* 『最新文章』的url是 article/tab#last
-* 『热门文章』的url是 article/tab#hot
-
-PHP:
-
-    class Tab extends Controller{
-        function last() // 处理 article/tab/last
-        function hot()  // 处理 article/tab/hot
-    }
-
-**框架的作用是 DRY**
-
-    assets
-    js-php conversion
     encryption
     database
         orm
         active record
-        migration
-        scafforlding
-    bootstrap
-    uri
-    session
     email
-    auth
-    config
-    string
     file
-    markdown
-    route
 
 ## 文档
 
