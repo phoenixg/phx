@@ -89,7 +89,7 @@ PHP:
     Config::has('application.timezone'); // 返回布尔值 true / false
 
 #### debugger
-抛弃`var_dump()`吧！Phx框架集成了两种调试器（[kint](http://raveren.github.io/kint) 和 [dBug](http://dbug.ospinto.com/)），支持任何数据类型！
+抛弃`var_dump()`吧！Phx框架集成了两种调试器（[Kint](http://raveren.github.io/kint) 和 [dBug](http://dbug.ospinto.com/)），支持任何数据类型！
 
 如果要禁用调试器，可在配置文件`application`中，修改`debug`项目为`false`；如果要更换调试器，请修改`debug_tool`为`dbug`或`kint`。
 
