@@ -8,7 +8,6 @@ Phx - A Micro assembled  RESTful PHP Framework For Beginners with one day learni
 ## TODO
 
 - 参考 CI 的优秀点：<http://codeigniter.org.cn/forums/thread-14343-1-1.html>
-- 下一步是要 Kint::enabled(false); 添加进dBug，做访问统一
 
 设计原则
 
@@ -87,7 +86,11 @@ JS:
 ## 文档
 
 #### debugger
-抛弃`var_dump()`吧，用集成的调试器。默认是加载的，如果要禁用，可在配置文件`application`中，修改`debug`项目为`false`。Phx框架提供了两种调试器和一致的调试方法，如果要更换调试器，请修改`debug_tool`为`dbug`或`kint`，现在就可以用以下函数来调试变量等信息：
+抛弃`var_dump()`吧！Phx框架集成了两种调试器，支持任何数据类型！
+
+如果要禁用调试器，可在配置文件`application`中，修改`debug`项目为`false`；如果要更换调试器，请修改`debug_tool`为`dbug`或`kint`。
+
+要调试内容，请这样：
 
     d( $var );
     d( $var1, $var2 );

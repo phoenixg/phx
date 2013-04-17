@@ -22,7 +22,7 @@ return array(
     'debug'         => true,
 
     // 调试工具（dbug 或 kint）， 是否再包括firephp
-    'debug_tool'           => 'dbug',
+    'debug_tool'           => 'kint',
 
     // 加密盐
     'key'                  => '123456abcdefg',
