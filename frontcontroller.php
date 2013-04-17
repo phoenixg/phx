@@ -27,7 +27,7 @@ class FrontController {
 
         // first two segments is controller/action
         $this->_controller = empty($request_str_arr['0']) ? Config::get('application.default_controller') : $request_str_arr['0'];
-        $this->_action = empty($request_str_arr['1']) ?  Config::get('application.default_action') : $request_str_arr['1'];
+        $this->_action     = empty($request_str_arr['1']) ?  Config::get('application.default_action') : $request_str_arr['1'];
 
         // uri parameters
         for($i = 2; $i < count($request_str_arr); $i++)

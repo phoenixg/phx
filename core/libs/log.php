@@ -1,10 +1,5 @@
 <?php
 
-/**
- * LOG CLASS
- *
- * usage: Log::info('test'), Log::warn('test'), Log::error('test')
- */
 class Log {
     private function __construct() {}
 
@@ -14,9 +9,8 @@ class Log {
         $message = static::format($type, $message);
         //echo $message;
 
-        // 这里应该注入路径，解耦
-        $logFile = PATH_LOGS . 'runtime_' . date('Ymd') . '.log';
-        file_put_contents($logFile, $message, LOCK_EX | FILE_APPEND);
+        // 这里最好注入路径，解耦
+        file_put_contents(FILE_LOG, $message, LOCK_EX | FILE_APPEND);
     }
 
     // format a log message
