@@ -280,5 +280,5 @@ $frontController = FrontController::getInstance();
 $frontController->route();
 
 
-include PATH_CORE_LIBS .'php-o' .DS.'O.php';
+//include PATH_CORE_LIBS .'php-o' .DS.'O.php';
 
