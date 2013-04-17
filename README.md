@@ -129,7 +129,7 @@ http://dbug.ospinto.com/
 </del>
 
 #### 日志类
-日志文件都位于`app/logs`目录，根据日期每天创建一个文件。如果你想在程序中创建一条日志记录，可以：
+日志文件都位于`app/logs`目录（请确保该目录可写），根据日期每天创建一个文件。如果你想在程序中创建一条日志记录，可以：
 
     Log::info('This is an information message');
     Log::warn('This is a warn message');
