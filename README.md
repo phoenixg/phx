@@ -167,4 +167,5 @@ Phx框架装配了[php-o](https://github.com/jsebrech/php-o)，为PHP提供了�
 ##### a() 用于处理数组
 包括：`count()`, `has()` (而不是 `in_array()`), `search()`, `shift()`, `unshift()`, `key_exists()`, `implode()`, `keys()`, `values()`, `pop()`, `push()`, `slice()`, `splice()`, `merge()`, `map()`, `reduce()`, `sum()`, `begin()` (而不是 `reset()`), `next()`, `current()`, `each()` 和 `end()`
 
-#####
+##### c() 连缀的支持
+    echo c(s("abcde"))->explode("b")->implode("c"); // accde ， 等价于 cs()
