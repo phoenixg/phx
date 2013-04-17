@@ -86,9 +86,16 @@ JS:
 
 ## 文档
 
+#### debugger
+抛弃`var_dump()`吧，用集成的调试器。默认是加载的，如果要禁用，可在配置文件`application`中，修改`debug`项目为`false`。Phx框架提供了两种调试器和一致的调试方法，如果要更换调试器，请修改`debug_tool`为`dbug`或`kint`，现在就可以用以下函数来调试变量等信息：
+
+    d( $var );
+    d( $var1, $var2 );
+
+<del>
 #### Kint （需开启 mb_string）
 http://raveren.github.io/kint
-    
+
     d( $var );
 
     // 同 d( $var ); die;
@@ -103,6 +110,7 @@ http://raveren.github.io/kint
 http://dbug.ospinto.com/
 
     new dBug(get_defined_vars());
-    
+
     $constants = get_defined_constants(true);
     new dBug($constants['user']);
+</del>
