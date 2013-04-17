@@ -279,7 +279,7 @@ require 'frontcontroller.php';
 $frontController = FrontController::getInstance();
 $frontController->route();
 
-//d(array(1,2,3), array(4,5,6,array('a')));
 
-?>
-<?php namespace O; include "O.php";?>
+include PATH_CORE_LIBS .'php-o' .DS.'O.php';
+echo s("abc")->len();
+echo s("abc")->substr(2);

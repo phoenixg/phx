@@ -554,14 +554,9 @@ if ( !function_exists( 'dd' ) ) {
 		die;
 	}
 }
-
+/*
 if ( !function_exists( 's' ) ) {
-
-	/**
-	 * Alias of kintLite()
-	 *
-	 * @return string
-	 */
+	//Alias of kintLite()
 	function s()
 	{
 		if ( !Kint::enabled() ) return;
@@ -575,12 +570,7 @@ if ( !function_exists( 's' ) ) {
 		echo '</pre>';
 	}
 
-	/**
-	 * Alias of kintLite()
-	 * [!!!] IMPORTANT: execution will halt after call to this function
-	 *
-	 * @return string
-	 */
+	//Alias of kintLite()
 	function sd()
 	{
 		if ( !Kint::enabled() ) return;
@@ -594,9 +584,8 @@ if ( !function_exists( 's' ) ) {
 		die;
 
 	}
-
 }
-
+*/
 
 /**
  * lightweight version of Kint::dump(). Uses whitespace for formatting instead of html
