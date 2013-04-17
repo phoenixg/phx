@@ -14,11 +14,11 @@ Phx - A Micro assembled  RESTful PHP Framework For Beginners with one day learni
 - 约定优于配置原则
 - KISS原则（极简主义）
 - 灵活性/非灵活性
-- 内置 firephp/dBug 调试
 - 优秀的代码书写体验
 - 优质的代码和架构
 - 代码易读性
 - 表达性：借鉴 laravel，方法的操纵和参数让人直接明白它要做的意思
+- 集成jquery等
 
 借用其他框架中收集的优秀函数
 
@@ -53,13 +53,6 @@ PHP:
     class Tab extends Controller{
         function last() // 处理 article/tab/last
         function hot()  // 处理 article/tab/hot
-    }
-
-JS:
-
-    var Tab = {
-        "last": function() // 处理 article/tab#last
-        "hot": function()  // 处理 article/tab#hot
     }
 
 **框架的作用是 DRY**
