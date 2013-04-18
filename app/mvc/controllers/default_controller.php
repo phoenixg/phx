@@ -2,6 +2,7 @@
 
 class Default_Controller extends Controller {
 
+	// 普通的是以action_开头
 	public function action_index()
 	{
 
@@ -28,8 +29,22 @@ class Default_Controller extends Controller {
 		include $viewPath;
 	}
 
-	public function action_GET()
+	// 只有put, delete, post方法才能使用到的方法，以rest_开头
+	public function rest_post($request)
 	{
+		d($request);
+		return 'dog';
+	}
+
+	public function rest_put($request)
+	{
+		d($request);
+		return 'dog';
+	}
+
+	public function rest_delete($request)
+	{
+		d($request);
 		return 'dog';
 	}
 

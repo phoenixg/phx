@@ -51,13 +51,69 @@ class FrontController {
 
     // 根据控制器和方法名称，执行控制器对应的方法
     public function route() {
-        $controllerName = ucfirst($this->_controller) . '_Controller';
-        $controllerHandler = new $controllerName();
+        $request = new Request();
+        $request->url_elements = array();
 
-        $action = 'action_'.$this->_action;
-        if(!method_exists($controllerHandler, $action))
-            throw new Exception('不存在方法：'.$action);
+        // eg. /default/index
+        if(isset($_SERVER['PATH_INFO'])) {
+          $request->url_elements = explode('/', $_SERVER['PATH_INFO']);
+        }
 
-        $controllerHandler->$action($this->_params);
+        $request->verb = $_SERVER['REQUEST_METHOD'];
+
+        switch($request->verb)
+        {
+          case 'GET':
+            $controllerName    = ucfirst($this->_controller) . '_Controller';
+            $controllerHandler = new $controllerName();
+
+            $action = 'action_'.$this->_action;
+            if(!method_exists($controllerHandler, $action)){
+                throw new Exception('不存在方法：'.$action);
+            }
+            $controllerHandler->$action($this->_params);
+            exit;
+          case 'POST':
+          case 'PUT':
+            $request->parameters = json_decode(file_get_contents('php://input'), 1);
+            break;
+          case 'DELETE':
+          default:
+            $request->parameters = array();
+        }
+
+        if($request->url_elements) {
+          $controller_name = ucfirst($request->url_elements[1]) . '_Controller';
+          if(class_exists($controller_name)) {
+            $controller = new $controller_name();
+            $action_name = 'rest_' . ucfirst($request->verb);
+            $response = $controller->$action_name($request);
+          } else {
+            header('HTTP/1.0 400 Bad Request');
+            $response = "Unknown Request for " . $request->url_elements[1];
+          }
+        } else {
+          header('HTTP/1.0 400 Bad Request');
+          $response = "Unknown Request";
+        }
+
+        echo json_encode($response);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
