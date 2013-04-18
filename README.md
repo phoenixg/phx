@@ -6,13 +6,11 @@ Phx - A Micro assembled  RESTful PHP Framework For Beginners with one day learni
 灵感来源：[Toper](http://my.oschina.net/mingtingling/blog?catalog=263852), [laravel](http://laravel.com/),
 [CodeIgniter](http://ellislab.com/codeigniter)
 
-鸣谢 [justjavac](http://justjavac.com) 
+鸣谢 [justjavac](http://justjavac.com)
 
 <http://localhost/phx/default/hello>
 
 ## TODO
-
-- 参考 CI 的优秀点：<http://codeigniter.org.cn/forums/thread-14343-1-1.html>
 - 参考博客里的优秀代码和知识点，用在框架上
 - 下一步要做的是实现rest，还是模板引擎？还是不要用模板引擎？
 - 下一步数据库层,orm和dao,ar的实现怎么做？ 装配？

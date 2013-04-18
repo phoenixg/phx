@@ -215,38 +215,33 @@ include 'ioc'.EXT;
  */
 //$test = IoC::resolve('classname');
 
-
-
 /*
  *---------------------------------------------------------------
  * SET CONTROLLER AND MODEL CLASSES TO BE AUTOLOAD
  *---------------------------------------------------------------
+ * $classname  eg. Default_Controller
  */
-function __autoload($classname)
-{
-    //var_dump($classname);  eg. Default_Controller
-    $fileController = PATH_APP_C . strtolower($classname) . EXT;
-
-    if (is_file($fileController)) {
-        include $fileController;
-    } else {
-        $fileModel = PATH_APP_M . strtolower($classname) . EXT;
-
-        if (is_file($fileModel)) {
-            include $fileModel;
-        } else {
-            throw new Exception('无法自动加载该类：'.$classname);
-        }
-    }
-}
-
-// 在这里重写自动加载，如何把各文件夹下的都加载进来，包括类库文件，还是不用包括？
-// new Default_Controller();
 spl_autoload_register(function ($classname){
-    $filename = PATH_APP_C.strtolower($classname).EXT;
-    if(is_file($filename)){
-        include $filename;
-        echo 'aaa';
+    try {
+        $fileFound = false;
+
+        $filename = PATH_APP_C.strtolower($classname).EXT;
+        if( is_file($filename) ){
+            $fileFound = true;
+            include $filename;
+        }
+
+        $filename = PATH_APP_M.strtolower($classname).EXT;
+        if( is_file($filename) ){
+            $fileFound = true;
+            include $filename;
+        }
+
+        if($fileFound = false) {
+            throw new Phxexception("无法自动加载该类：".$filename);
+        }
+    } catch(Phxexception $e) {
+        echo $e->getMsg();
     }
 });
 
