@@ -219,6 +219,7 @@ include 'ioc'.EXT;
  *---------------------------------------------------------------
  * SET CONTROLLER AND MODEL CLASSES TO BE AUTOLOAD
  *---------------------------------------------------------------
+ * 参考：http://php.net/manual/en/function.spl-autoload-register.php
  * $classname  eg. Default_Controller
  */
 spl_autoload_register(function ($classname){
@@ -262,9 +263,46 @@ if ($CFG::get('application.php-o') === true) {
  * eg. index.php?c=default&a=index [decrypted]
  * eg. index.php/default/hello/param1/value1/param2/value2
  */
+/*
 require 'frontcontroller.php';
 $frontController = FrontController::getInstance();
 $frontController->route();
+*/
 
 
+$request = new Request();
+$request->url_elements = array();
+if(isset($_SERVER['PATH_INFO'])) {
+  $request->url_elements = explode('/', $_SERVER['PATH_INFO']);
+}
 
+$request->verb = $_SERVER['REQUEST_METHOD'];
+switch($request->verb) {
+  case 'GET':
+    $request->parameters = $_GET;
+    break;
+  case 'POST':
+  case 'PUT':
+    $request->parameters = json_decode(file_get_contents('php://input'), 1);
+    break;
+  case 'DELETE':
+  default:
+    $request->parameters = array();
+}
+
+if($request->url_elements) {
+  $controller_name = ucfirst($request->url_elements[1]) . 'Controller';
+  if(class_exists($controller_name)) {
+    $controller = new $controller_name();
+    $action_name = ucfirst($request->verb) . "Action";
+    $response = $controller->$action_name($request);
+  } else {
+    header('HTTP/1.0 400 Bad Request');
+    $response = "Unknown Request for " . $request->url_elements[1];
+  }
+} else {
+  header('HTTP/1.0 400 Bad Request');
+  $response = "Unknown Request";
+}
+
+echo json_encode($response);
