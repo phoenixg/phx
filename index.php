@@ -304,14 +304,13 @@ switch($request->verb) {
                                 $controllerHandler->$action($this->_params);
                                 */
 
+// 如果是get就用原来的方式？
+
 if($request->url_elements) {
   $controller_name = ucfirst($request->url_elements[1]) . '_Controller';
   if(class_exists($controller_name)) {
     $controller = new $controller_name();
-
-    d( $controller );die;
-
-    $action_name = ucfirst($request->verb) . "Action";
+    $action_name = 'action_' . ucfirst($request->verb);
     $response = $controller->$action_name($request);
   } else {
     header('HTTP/1.0 400 Bad Request');

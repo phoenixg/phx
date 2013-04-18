@@ -28,6 +28,9 @@ class Default_Controller extends Controller {
 		include $viewPath;
 	}
 
-
+	public function action_GET()
+	{
+		return 'dog';
+	}
 
 }
