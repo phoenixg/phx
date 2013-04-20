@@ -4,10 +4,11 @@
 
 
 // post测试
-/*
+
 $data = json_encode(array('a','b','c'));
 
 $ch = curl_init('http://localhost/phx/default');
+/*
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_POST, 1);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
@@ -19,6 +20,7 @@ var_dump($events); // 说明利用REST创建记录成功！
 
 // put测试
 //$ch = curl_init('http://localhost/spbooks-PHPPRO1-ae9bb56/chapter_03/rest/index.php/events/2');
+/*
 $ch = curl_init('http://localhost/phx/default');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $response = curl_exec($ch);
@@ -35,3 +37,4 @@ $response = curl_exec($ch);
 
 var_dump($response); // 说明利用REST修改记录成功！输出：string(5) ""bbb""
 
+*/

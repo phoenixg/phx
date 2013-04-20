@@ -1,7 +1,7 @@
 Phx
 ===
 
-Phx - A Micro assembled  RESTful PHP Framework For Beginners with one day learning curve
+Phx - A Tiny assembled  RESTful PHP Framework For Beginners with one day learning curve
 
 灵感来源：[Toper](http://my.oschina.net/mingtingling/blog?catalog=263852), [laravel](http://laravel.com/),
 [CodeIgniter](http://ellislab.com/codeigniter)
@@ -46,7 +46,8 @@ Phx - A Micro assembled  RESTful PHP Framework For Beginners with one day learni
 ## 文档
 
 #### 安装
-环境要求：需要 PHP 5.3 及以上版本，确认开启了mb_string。
+环境要求：需要 PHP 5.3 及以上版本，确认开启了mb_string, curl扩展
+    sudo apt-get install php5-curl
 
 <!--
 首先：
