@@ -37,6 +37,7 @@ class Default_Controller extends Controller {
     {
         // 这里应该做一些安全验证和过滤
         // 存数据，获取返回id
+
         $id = 123;
         return $id;
     }
