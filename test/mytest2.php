@@ -40,4 +40,4 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
 $response = curl_exec($ch);
 
-var_dump($response); // 说明利用REST删除记录成功！输出：string(5) ""ccc""
+var_dump($response); // 说明利用REST删除记录成功！
