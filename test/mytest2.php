@@ -27,11 +27,10 @@ $item   = json_decode($response, 1);
 $item['title'] = '哈利波特与密室的新名称';
 
 $data = json_encode($item);
-$ch = curl_init('http://localhost/phx/default/2');
+$ch = curl_init('http://localhost/phx/default/3');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 $response = curl_exec($ch);
-
-var_dump($response); // 说明利用REST修改记录成功！输出：string(5) ""bbb""
+var_dump($response); // 说明利用REST修改记录成功！
 
