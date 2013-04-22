@@ -46,7 +46,7 @@ class Default_Controller extends Controller {
 
     public function rest_delete($request)
     {
-        d($request);
+        print_r($request);
         return 'dog';
     }
 

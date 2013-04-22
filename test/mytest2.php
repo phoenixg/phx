@@ -17,8 +17,7 @@ var_dump($events); // 说明利用REST创建记录成功！
 */
 
 // put测试
-//$ch = curl_init('http://localhost/spbooks-PHPPRO1-ae9bb56/chapter_03/rest/index.php/events/2');
-
+/*
 $ch = curl_init('http://localhost/phx/default');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $response = curl_exec($ch);
@@ -33,4 +32,12 @@ curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 $response = curl_exec($ch);
 var_dump($response); // 说明利用REST修改记录成功！
+*/
 
+// DELETE
+$ch = curl_init('http://localhost/phx/default/3');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
+$response = curl_exec($ch);
+
+var_dump($response); // 说明利用REST删除记录成功！输出：string(5) ""ccc""
