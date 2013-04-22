@@ -263,8 +263,8 @@ if ($CFG::get('application.php-o') === true) {
 ORM::configure('mysql:host='.$CFG::get('database.host').';dbname='.$CFG::get('database.database'));
 ORM::configure('username', $CFG::get('database.username'));
 ORM::configure('password', $CFG::get('database.password'));
-ORM::configure('driver_options', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
-
+ORM::configure('driver_options', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES '.$CFG::get('database.charset')));
+ORM::configure('id_column_overrides', $CFG::get('database.idiom_column_id'));
 
 
 /*

@@ -99,21 +99,5 @@ class FrontController {
 
         echo json_encode($response);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
