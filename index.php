@@ -260,30 +260,11 @@ if ($CFG::get('application.php-o') === true) {
  * CONFIGURE IDIORM
  *---------------------------------------------------------------
  */
-ORM::configure('mysql:host=localhost;dbname=test');
-ORM::configure('username', 'root');
-ORM::configure('password', '123456');
+ORM::configure('mysql:host='.$CFG::get('database.host').';dbname='.$CFG::get('database.database'));
+ORM::configure('username', $CFG::get('database.username'));
+ORM::configure('password', $CFG::get('database.password'));
 
-$user = ORM::for_table('employees')
-    ->where_equal('employee_name', 'wang')
-    ->find_one();
-/*
-$user->first_name = 'Jamie';
-$user->save();
 
-$tweets = ORM::for_table('tweet')
-    ->select('tweet.*')
-    ->join('user', array(
-        'user.id', '=', 'tweet.user_id'
-    ))
-    ->where_equal('user.username', 'j4mie')
-    ->find_many();
-
-foreach ($tweets as $tweet) {
-    echo $tweet->text;
-}
-*/
-d($user);
 
 /*
  *---------------------------------------------------------------

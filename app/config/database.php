@@ -1,10 +1,10 @@
 <?php
-// 暂时只用mysql吧，但是要用PDO做，以便以后支持其他数据库
+// 暂时只支持mysql
 return array (
     'host'      => 'localhost',
-    'database'  => '',
-    'username'  => '',
-    'password'  => '',
+    'database'  => 'test',
+    'username'  => 'root',
+    'password'  => '123456',
     'charset'   => 'utf8',
     'prefix'    => '',
 );
