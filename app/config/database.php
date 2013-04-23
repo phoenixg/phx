@@ -1,6 +1,7 @@
 <?php
 // 暂时只支持mysql
 return array (
+    'enable' => true,
     'host'            => 'localhost',
     'database'        => 'test',
     'username'        => 'root',
