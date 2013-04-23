@@ -6,10 +6,6 @@ class Default_Controller extends Controller {
     public function action_index()
     {
 
-        $user = ORM::for_table('employees')
-            ->where_equal('employee_name', 'wang')
-            ->find_one();
-        d($user);
         echo 'you are in default controller and default method';
     }
 

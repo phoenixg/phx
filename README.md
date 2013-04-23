@@ -138,6 +138,3 @@ Phx框架装配了[php-o](https://github.com/jsebrech/php-o)，默认在`applica
     echo c(s("abcde"))->explode("b")->implode("c"); // accde ， 等价于 cs()
 
 
-#### Idiom
-官网： https://github.com/j4mie/idiorm
-文档： http://idiorm.readthedocs.org/en/latest/configuration.html
