@@ -59,6 +59,16 @@ unregister_GLOBALS();
 
 // turn off magic quotes
 @set_magic_quotes_runtime(0);
+if(get_magic_quotes_gpc()) {
+    function stripslashes_deep($value) {
+      $value = is_array($value) ? array_map('stripslashes_deep', $value) : (isset($value) ? stripslashes($value) : null);
+      return $value;
+    }
+
+    $_POST   = stripslashes_deep($_POST);
+    $_GET    = stripslashes_deep($_GET);
+    $_COOKIE = stripslashes_deep($_COOKIE);
+}
 
 /*
  *---------------------------------------------------------------
