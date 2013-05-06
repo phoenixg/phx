@@ -3,12 +3,18 @@ Phx
 
 Phx - A Tiny assembled  RESTful PHP Framework For Beginners with one day learning curve
 
-灵感来源：[Toper](http://my.oschina.net/mingtingling/blog?catalog=263852), [laravel](http://laravel.com/),
-[CodeIgniter](http://ellislab.com/codeigniter)
+灵感来源： 
+[laravel](http://laravel.com/),
+[CodeIgniter](http://ellislab.com/codeigniter), 
+[Toper](http://my.oschina.net/mingtingling/blog?catalog=263852)
 
 鸣谢 [justjavac](http://justjavac.com)
 
 <http://localhost/phx/default/hello>
+
+## 框架的使命（Mission）
+- 学习：如果你从未接触过框架，或只想用最少的代码去做一个很小的项目，那么这个框架会帮助你轻松上手，了解PHP框架的一些基本知识
+- 集成了一些易用的工具，如果你发现自己无可救药地爱上了这些工具，那么你会想在自己的其他项目中使用它们
 
 ## TODO
 - 参考博客里的优秀代码和知识点，用在框架上
