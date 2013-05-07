@@ -49,7 +49,7 @@ Phx - A Tiny assembled  RESTful PHP Framework For Beginners with one day learnin
     email
     file
 
-## 文档
+## 单页文档
 
 #### 安装
 环境要求：需要 PHP 5.3 及以上版本，确认开启了mb_string, curl扩展
