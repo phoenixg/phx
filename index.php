@@ -9,11 +9,11 @@
  *  \    /,            /    >.
  *    \    /,      _/    /.
  *      \_    /_/      /.     It's more like an eagle than phoenix,
- *        \__/_      <      if you find a better ascii picture,
- *        /<<<  \_\_      it's welcome to  make a pull request
+ *        \__/_      <        if you find a better ascii picture,
+ *        /<<<  \_\_          it's welcome to  make a pull request
  *      /,)^>>_._  \
  *      (/      \\  /\\\
- *                // ````       now let's fly!
+ *                // ````     Now let's fly!
  */
 
 /*
@@ -26,23 +26,23 @@
 // 定义文件夹的路径
 define('DS',                DIRECTORY_SEPARATOR);
 define('PATH_BASE',         __DIR__ . DS);
-define('PATH_APP',          PATH_BASE . 'app' .       DS);
-define('PATH_APP_C',        PATH_BASE . 'app' .       DS . 'mvc' .        DS . 'controllers' .    DS);
-define('PATH_APP_M',        PATH_BASE . 'app' .       DS . 'mvc' .        DS . 'models' .          DS);
-define('PATH_ASSETS',       PATH_BASE . 'assets' .  DS);
-define('PATH_LOGS',         PATH_APP . 'logs' .       DS);
+define('PATH_APP',          PATH_BASE . 'app' .        DS);
+define('PATH_APP_C',        PATH_BASE . 'app' .        DS . 'mvc' .        DS . 'controllers' .    DS);
+define('PATH_APP_M',        PATH_BASE . 'app' .        DS . 'mvc' .        DS . 'models' .         DS);
+define('PATH_ASSETS',       PATH_BASE . 'assets' .     DS);
+define('PATH_LOGS',         PATH_APP . 'logs' .        DS);
 define('PATH_CORE',         PATH_BASE . 'core' .       DS);
-define('PATH_CORE_LIBS',    PATH_BASE . 'core' .       DS . 'libs' .             DS);
+define('PATH_CORE_LIBS',    PATH_BASE . 'core' .       DS . 'libs' .       DS);
 define('PATH_CORE_HELPERS', PATH_BASE . 'core' .       DS . 'helpers' .    DS);
-define('PATH_CORE_DEBUG',   PATH_BASE . 'core' .       DS . 'debugger' .      DS);
-define('PATH_CORE_COMMONS', PATH_BASE . 'core' .       DS . 'commons' .      DS);
-define('PATH_CORE_PLUGINS', PATH_BASE . 'core' .       DS . 'plugins' .      DS);
+define('PATH_CORE_DEBUG',   PATH_BASE . 'core' .       DS . 'debugger' .   DS);
+define('PATH_CORE_COMMONS', PATH_BASE . 'core' .       DS . 'commons' .    DS);
+define('PATH_CORE_PLUGINS', PATH_BASE . 'core' .       DS . 'plugins' .    DS);
 
 
 // 定义文件的路径
 define('EXT',       '.php');
 define('FILE_BASE', PATH_BASE . 'index' .   EXT);
-define('FILE_LOG',  PATH_LOGS .   date('Y-m-d') . '.log');
+define('FILE_LOG',  PATH_LOGS . date('Y-m-d') . '.log');
 
 // 定义跨平台的行尾结束符
 define('EOL', PHP_EOL);

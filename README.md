@@ -3,14 +3,14 @@ Phx
 
 Phx - A Tiny assembled  RESTful PHP Framework For Beginners with one day learning curve
 
-灵感来源： 
+灵感来源：
 [laravel](http://laravel.com/),
-[CodeIgniter](http://ellislab.com/codeigniter), 
+[CodeIgniter](http://ellislab.com/codeigniter),
 [Toper](http://my.oschina.net/mingtingling/blog?catalog=263852)
 
-鸣谢 [justjavac](http://justjavac.com)
+特别鸣谢：[justjavac](http://justjavac.com)
 
-<http://localhost/phx/default/hello>
+初始路径：<http://localhost/phx/default/hello>
 
 ## 框架的使命（Mission）
 - 学习：如果你从未接触过框架，或只想用最少的代码去做一个很小的项目，那么这个框架会帮助你轻松上手，了解PHP框架的一些基本知识
@@ -23,49 +23,34 @@ Phx - A Tiny assembled  RESTful PHP Framework For Beginners with one day learnin
 - 下一步数据库层,orm和dao,ar的实现怎么做？ 装配？
 - 下一步先做什么？
 - 不提供前端框架？
-
-设计原则
-
-- 约定优于配置原则
-- KISS原则（极简主义）
-- 灵活性/非灵活性
-- 优秀的代码书写体验
-- 优质的代码和架构
-- 代码易读性
-- 表达性：借鉴 laravel，方法的操纵和参数让人直接明白它要做的意思
-- 集成jquery等
-- 安装成功的首页显示凤凰的字符图，它说"成功安装了，删掉我，开始写代码"之类的话
-- 框架的作用是 DRY
-- 借用其他框架中收集的优秀函数
+- 文件操作类、加密类、邮件类等
 - 完全遵循 PSR-2 编码规范
 - 全英文文档的撰写
-- gitpage 等项目官方网站
 - 插件用注册器模式
+- 默认主页：安装成功的首页显示凤凰的字符图，它说"成功安装了，删掉我，开始写代码"之类的话
 
+## 设计导向（只是导向，不一定完美实现了）
+- 约定优于配置原则
+- KISS原则（极简主义）
+- 灵活性/非灵活性的权衡
+- 优秀的代码书写体验，借鉴laravel的语义性，方法的操纵和参数让人直接明白它要做的意思
+- 优质的代码和架构
+- 优秀的代码易读性
 
-    encryption
-    database
-        orm
-        active record
-    email
-    file
+## 单页文档 Single Page Documentation
 
-## 单页文档
+#### 安装 INSTALLATION
 
-#### 安装
 环境要求：需要 PHP 5.3 及以上版本，确认开启了mb_string, curl扩展
+Requirements: >=PHP 5.3 with `mb_string`,`curl` extension enabled
     sudo apt-get install php5-curl
 
 <!--
 首先：
-
     php composer.phar install
 -->
 
-
-
-
-#### 配置类
+#### 配置类 CONFIGURATION
 要设置一个配置项目，只需修改`app/config`下的文件。你还可以参考现有的配置文件创建自己的配置文件。
 
     # 获得一个配置项目的内容，这里的application就是配置文件的文件名
@@ -145,3 +130,5 @@ Phx框架装配了[php-o](https://github.com/jsebrech/php-o)，默认在`applica
     echo c(s("abcde"))->explode("b")->implode("c"); // accde ， 等价于 cs()
 
 
+#### 附带的常用组件
+    jQuery 位于 `phx/assets/core/js` 下，版本是`1.9.1`， 可替换升级，引用参考`index.php`中定义的各种路径常量。
