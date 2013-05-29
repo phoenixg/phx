@@ -37,12 +37,14 @@ Phx - A Tiny assembled  RESTful PHP Framework For Beginners with one day learnin
 - 优质的代码和架构
 - 优秀的代码易读性
 
-## 单页文档 Single Page Documentation
+## 单页文档 （Single Page Documentation）
 
-#### 安装 INSTALLATION
+All you need to know about this framework is inside this page.
 
-环境要求：需要 PHP 5.3 及以上版本，确认开启了mb_string, curl扩展
-Requirements: >=PHP 5.3 with `mb_string`,`curl` extension enabled
+#### 安装 （INSTALLATION）
+
+    # 环境要求：需要 PHP 5.3 及以上版本，确认开启了mb_string, curl扩展
+    # Requirements: >=PHP 5.3 with `mb_string`,`curl` extension enabled
     sudo apt-get install php5-curl
 
 <!--
@@ -50,18 +52,23 @@ Requirements: >=PHP 5.3 with `mb_string`,`curl` extension enabled
     php composer.phar install
 -->
 
-#### 配置类 CONFIGURATION
-要设置一个配置项目，只需修改`app/config`下的文件。你还可以参考现有的配置文件创建自己的配置文件。
+#### 配置类 （CONFIGURATION）
+    # 要设置一个配置项目，只需修改`app/config`下的文件。你还可以参考现有的配置文件创建自己的配置文件
+    # To configure an item, just modify files under `app/config`. You can also create your own configuration files under this folder
 
     # 获得一个配置项目的内容，这里的application就是配置文件的文件名
+    # To retrieve a configuration item: (here `application` is configuration file name)
     Config::get('application');          // 数组形式返回application键下的所有项目
     Config::get('application.timezone'); // 如果这不是数组，就返回项目的值
 
     # 判断配置项目是否存在
+    # To determine whether a configuration item exists
     Config::has('application.timezone'); // 返回布尔值 true / false
 
 #### debugger
-抛弃`var_dump()`吧！Phx框架装配了两种调试器（[Kint](http://raveren.github.io/kint) 和 [dBug](http://dbug.ospinto.com/)），支持任何数据类型！
+    抛弃`var_dump()`吧！Phx框架装配了两种调试器（[Kint](http://raveren.github.io/kint) 和 [dBug](http://dbug.ospinto.com/)），支持任何数据类型！
+    Let's say Goodbye to `var_dump()`! //TODO
+
 
 如果要禁用调试器，可在配置文件`application`中，修改`debug`项目为`false`；如果要更换调试器，请修改`debug_tool`为`dbug`或`kint`。
 
