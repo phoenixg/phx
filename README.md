@@ -66,7 +66,7 @@ All you need to know about this framework is inside this page and `default_contr
     Config::has('application.timezone'); // 返回布尔值 true / false
 
 #### debugger
-    抛弃`var_dump()`吧！Phx框架装配了两种调试器
+    抛弃`var_dump()`吧！Phx框架装配了两种调试器：
     （[Kint](http://raveren.github.io/kint) 和 [dBug](http://dbug.ospinto.com/)），支持任何数据类型！
     如果要禁用调试器，可在配置文件`application`中，修改`debug`项目为`false`；
     如果要更换调试器，请修改`debug_tool`为`dbug`或`kint`。
@@ -96,15 +96,14 @@ All you need to know about this framework is inside this page and `default_contr
 -->
 
 #### 服务器端日志类
-日志文件都位于`app/logs`目录（请确保该目录可写），根据日期每天创建一个文件。如果你想在程序中创建一条日志记录，可以：
-
+    # 日志文件都位于`app/logs`目录（请确保该目录可写），根据日期每天创建一个文件。
+    # 如果你想在程序中创建一条日志记录，可以：
     Log::info('This is an information message');
     Log::warn('This is a warn message');
     Log::error('This is an error message');
 
 #### 浏览器端日志类
-抛弃`console.log`吧！Phx框架装配了浏览器端日志/调试类（[Log](http://adamschwartz.co/log/ )），用法：
-
+    # 抛弃`console.log`吧！Phx框架装配了浏览器端日志/调试类（[Log](http://adamschwartz.co/log/ )），用法：
     log(123)
     log('这是 *斜体字*')
     log('这是 _加粗字_')
