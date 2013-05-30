@@ -138,4 +138,5 @@ Phx框架装配了[php-o](https://github.com/jsebrech/php-o)，默认在`applica
 #### 附带的常用组件
     jQuery 位于 `phx/assets/core/js` 下，版本是`1.9.1`， 可自行替换升级，引用参考`index.php`中定义的各种路径常量。
 
-
+#### 补充
+    `test`,`tests`,`docs`文件夹，`composer.json`,`composer.phar`文件都是没有用的，您可以删除掉！
