@@ -17,6 +17,7 @@ Phx - A Tiny assembled  RESTful PHP Framework For Beginners with one day learnin
 - 自我学习：通过编写一个开发框架，可以很好地锻炼自己，学会和巩固一些设计模式及其他的基础知识
 - 集成了一些易用的工具，如果你发现自己无可救药地爱上了这些工具，那么你可能会想在自己的其他项目中使用它们
 
+<!--
 ## TODO
 - 参考博客里的优秀代码和知识点，用在框架上
 - 下一步要做的是实现rest，还是模板引擎？还是不要用模板引擎？
@@ -25,8 +26,6 @@ Phx - A Tiny assembled  RESTful PHP Framework For Beginners with one day learnin
 - 不提供前端框架？
 - 文件操作类、加密类、邮件类等
 - 完全遵循 PSR-2 编码规范
-- 全英文文档的撰写
-- 插件用注册器模式
 - 默认主页：安装成功的首页显示凤凰的字符图，它说"成功安装了，删掉我，开始写代码"之类的话
 
 ## 设计导向（只是导向，不一定完美实现了）
@@ -36,10 +35,11 @@ Phx - A Tiny assembled  RESTful PHP Framework For Beginners with one day learnin
 - 优秀的代码书写体验，借鉴laravel的语义性，方法的操纵和参数让人直接明白它要做的意思
 - 优质的代码和架构
 - 优秀的代码易读性
+-->
 
-## 单页文档 （Single Page Documentation）
+## 文档 （Documentation）
 
-All you need to know about this framework is inside this page.
+All you need to know about this framework is inside this page and `default_controller.php` in which sample codes are provided.
 
 #### 安装 （INSTALLATION）
 
@@ -138,4 +138,6 @@ Phx框架装配了[php-o](https://github.com/jsebrech/php-o)，默认在`applica
 
 
 #### 附带的常用组件
-    jQuery 位于 `phx/assets/core/js` 下，版本是`1.9.1`， 可替换升级，引用参考`index.php`中定义的各种路径常量。
+    jQuery 位于 `phx/assets/core/js` 下，版本是`1.9.1`， 可自行替换升级，引用参考`index.php`中定义的各种路径常量。
+
+

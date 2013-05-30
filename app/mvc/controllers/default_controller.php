@@ -2,13 +2,35 @@
 
 class Default_Controller extends Controller {
 
-    // 普通的是以action_开头
+    // 例子1：普通的http verb请以action_开头
     public function action_index()
     {
 
-        echo 'you are in default controller and default method';
+        echo 'you are in default controller <strong>'.__CLASS__.'
+              </strong> and default method <strong>' .__METHOD__.'</strong>';
     }
 
+    // 例子2：使用视图
+    public function action_hello(array $params)
+    {
+        var_dump($params);
+        echo 'you are in hello';
+
+        $this->test();
+        /*
+        $model = new User_Model();
+        $myVar =  $model->query();
+        var_dump($myVar);
+        */
+
+        $viewPath = dirname(__FILE__) . '/../views/default.php';
+        if(!file_exists($viewPath))
+            throw new Exception('不存在视图文件：'.$viewPath);
+
+        include $viewPath;
+    }
+
+    // 例子3：PDO
     public function action_pdo()
     {
         /*
@@ -86,26 +108,7 @@ class Default_Controller extends Controller {
 
     }
 
-    public function action_hello(array $params)
-    {
-        var_dump($params);
-        echo 'you are in hello';
-
-        $this->test();
-        /*
-        $model = new User_Model();
-        $myVar =  $model->query();
-        var_dump($myVar);
-        */
-
-        $viewPath = dirname(__FILE__) . '/../views/default.php';
-        if(!file_exists($viewPath))
-            throw new Exception('不存在视图文件：'.$viewPath);
-
-        include $viewPath;
-    }
-
-    // 只有put, delete, post方法才能使用到的方法，以rest_开头
+    // 例子4：post。只有put, delete, post方法才能使用到的方法，请以rest_开头
     public function rest_post($request)
     {
         // 这里应该做一些安全验证和过滤
@@ -115,16 +118,18 @@ class Default_Controller extends Controller {
         return $id;
     }
 
+    // 例子5：put
     public function rest_put($request)
     {
         print_r($request);
-        return 'dog';
+        return 'I love wujiamin';
     }
 
+    // 例子6：delete
     public function rest_delete($request)
     {
         print_r($request);
-        return 'dog';
+        return 'I love wujiamin';
     }
 
 
