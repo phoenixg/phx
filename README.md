@@ -66,11 +66,10 @@ All you need to know about this framework is inside this page and `default_contr
     Config::has('application.timezone'); // 返回布尔值 true / false
 
 #### debugger
-    抛弃`var_dump()`吧！Phx框架装配了两种调试器（[Kint](http://raveren.github.io/kint) 和 [dBug](http://dbug.ospinto.com/)），支持任何数据类型！
-    Let's say Goodbye to `var_dump()`! //TODO
-
-
-如果要禁用调试器，可在配置文件`application`中，修改`debug`项目为`false`；如果要更换调试器，请修改`debug_tool`为`dbug`或`kint`。
+    抛弃`var_dump()`吧！Phx框架装配了两种调试器
+    （[Kint](http://raveren.github.io/kint) 和 [dBug](http://dbug.ospinto.com/)），支持任何数据类型！
+    如果要禁用调试器，可在配置文件`application`中，修改`debug`项目为`false`；
+    如果要更换调试器，请修改`debug_tool`为`dbug`或`kint`。
 
 要调试内容，请这样：
 
